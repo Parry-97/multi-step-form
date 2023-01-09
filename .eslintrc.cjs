@@ -8,7 +8,14 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
   ],
-  overrides: [],
+  overrides: [
+    {
+      files: ["**/*.jsx"],
+      rules: {
+        "react/prop-types": "off",
+      },
+    },
+  ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
