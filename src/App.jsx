@@ -10,22 +10,23 @@ import InfoForm from "./components/InfoForm";
 import AddOnSelect from "./components/AddOnSelect";
 
 function App() {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
 
-  const steps = new Map([
-    [1, InfoForm],
-    [2, PlanSelect],
-    [3, AddOnSelect],
-    [4, Summary],
-    // [5, Finish],
-  ]);
+  const steps = [InfoForm, PlanSelect, AddOnSelect, Summary];
+  const stepDescriptions = ["Your info", "select plan", "add-ons", "Summary"];
   //TODO: Add state for currently active step and pass it down to Navbar and Card Factory component
   return (
-    <div className="flex font-semibold">
-      <Navbar options={steps} activeStep={activeStep} showFull={false} />
+    <div className="flex flex-col md:flex-row max-w-screen-xl">
+      <Navbar
+        stepDescriptions={stepDescriptions}
+        activeStep={activeStep}
+        showFull={false}
+      />
       <CardFactory
-        component={steps.get(activeStep)}
-        onGoBack={() => setActiveStep(activeStep - 1)}
+        component={steps[activeStep]}
+        onGoBack={() =>
+          setActiveStep(activeStep > 0 ? activeStep - 1 : activeStep)
+        }
         onGoNext={() => setActiveStep(activeStep + 1)}
       ></CardFactory>
     </div>
