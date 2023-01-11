@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --marine-blue: hsl(213, 96%, 18%);
   --purplish-blue: hsl(243, 100%, 62%);

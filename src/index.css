@@ -10,6 +10,7 @@
 
 :root {
   font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+  height: 100vmin;
   /* font-size: 16px; */
 }
 
@@ -28,9 +29,11 @@ body {
   place-items: center;
 
   min-width: 320px;
+  min-height: 320px;
   /*WARN: This is important to allow the body to strech entire viewport instead of limiting it
   *       to wrap the internal content*/
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 100%;
 }
 /**/
 /* h1 { */

@@ -3,7 +3,7 @@ const Navbar = ({ stepDescriptions: descriptions, activeStep, showFull }) => {
   console.log(descriptions);
 
   return (
-    <div className="mx-auto">
+    <div className="px-10 bg-cover bg-[url('../../assets/images/bg-sidebar-desktop.svg')]">
       <ul>
         {descriptions.map((description, i) => {
           return activeStep == i ? (
