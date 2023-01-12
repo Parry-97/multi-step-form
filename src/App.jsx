@@ -10,7 +10,7 @@ import InfoForm from "./components/InfoForm";
 import AddOnSelect from "./components/AddOnSelect";
 
 function App() {
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(0);
 
   const steps = [InfoForm, PlanSelect, AddOnSelect, Summary, Finish];
   const stepDescriptions = ["Your info", "select plan", "add-ons", "Summary"];
@@ -21,7 +21,7 @@ function App() {
    * flex items stretch to the height of the flex container by default.*/
 
   return (
-    <div className="flex grow h-full my-0 py-10 flex-col md:flex-row  max-w-screen-lg">
+    <div className="flex grow my-20  mx-auto shadow-2xl rounded-t-xl rounded-b-xl flex-col lg:flex-row  max-w-screen-lg">
       <Navbar
         stepDescriptions={stepDescriptions}
         activeStep={activeStep}
