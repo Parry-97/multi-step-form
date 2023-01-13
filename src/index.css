@@ -11,6 +11,7 @@
 :root {
   font-family: "Ubuntu", Arial, Helvetica, sans-serif;
   height: 100%;
+
   /* font-size: 16px; */
 }
 
@@ -25,11 +26,12 @@
 /**/
 body {
   margin: 0;
+
   /* display: flex; */
   place-items: center;
 
-  min-width: 580px;
-  min-height: 700px;
+  min-width: 375px;
+  min-height: 800px;
   /*WARN: This is important to allow the body to strech entire viewport instead of limiting it
   *       to wrap the internal content*/
   /* min-height: 100vh; */

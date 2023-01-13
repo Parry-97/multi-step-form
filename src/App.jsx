@@ -21,7 +21,7 @@ function App() {
    * flex items stretch to the height of the flex container by default.*/
 
   return (
-    <div className="flex grow my-20  mx-auto shadow-2xl rounded-t-xl rounded-b-xl flex-col lg:flex-row  max-w-screen-lg">
+    <div className="flex grow my-20  mx-auto shadow-2xl rounded-3xl flex-col lg:flex-row  max-w-screen-lg">
       <Navbar
         stepDescriptions={stepDescriptions}
         activeStep={activeStep}

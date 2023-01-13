@@ -1,45 +1,72 @@
 const InfoForm = () => {
   return (
-    <div className="mx-auto">
-      <h1 className="block font-extrabold text-4xl">Personal info</h1>{" "}
-      <form className="flex-col max-w-lg" action="">
-        <p>Please provide your name, email address, and phone number.</p>
-        <div className="flex flex-col md:flex-row justify-between md:gap-10 ">
-          <label htmlFor="username">Username</label>{" "}
+    <div className="flex flex-col mx-auto py-16">
+      <h1 className="block font-extrabold info__head text-4xl">
+        Personal info
+      </h1>{" "}
+      <form className="grow flex flex-col gap-2 max-w-lg" action="">
+        <p className="info__p text-lg font-normal mb-10">
+          Please provide your name, email address, and phone number.
+        </p>
+        <div className="flex flex-col justify-between ">
+          <label className="info__label font-medium text-sm" htmlFor="username">
+            Username
+          </label>{" "}
           <input
             required={true}
-            className="rounded-lg invalid:border-red-500 invalid:text-red-600
-      focus:invalid:border-red-500 focus:invalid:ring-red-500 border border-gray-300 px-2 text-center"
+            className="rounded-lg py-1.5 
+      focus:invalid:border-red-500 focus:invalid:ring-red-500 border border-gray-300 px-2.5 font-medium"
             type="text"
             name="username"
-            defaultValue={"e.g. Stephen King"}
+            placeholder={"e.g. Stephen King"}
           />
         </div>
         <br />
-        <div className="flex flex-col md:flex-row justify-between md:gap-10">
-          <label htmlFor="useremail">Email</label>
+        <div className="flex flex-col  justify-between">
+          <label
+            className="info__label font-medium text-sm"
+            htmlFor="useremail"
+          >
+            Email
+          </label>
           <input
             required={true}
-            className="rounded-lg invalid:border-red-500 invalid:text-red-600
-      focus:invalid:border-red-500 focus:invalid:ring-red-500 border border-gray-300 px-2 text-center"
+            className="py-1.5 rounded-lg 
+      focus:invalid:border-red-500 focus:invalid:ring-red-500 border border-gray-300 px-2.5 font-medium"
             name="useremail"
             type="email"
-            defaultValue={"e.g. stephenking@lorem.com"}
+            /*WARN: The input value is automatically validated to ensure that it's either empty
+             * or a properly-formatted email address (or list of addresses) before the form can be submitted
+             * MDN does not even recommend it for emails*/
+            placeholder={"param.singh@fmail.com"}
+            // defaultValue={"stephenking@lorem.com"}
           />
         </div>
         <br />
-        <div className="flex flex-col md:flex-row justify-between md:gap-10">
-          <label htmlFor="usernumber">Phone Number</label>
+        <div className="flex flex-col justify-between">
+          <label
+            className="info__label font-medium text-sm"
+            htmlFor="usernumber"
+          >
+            Phone Number
+          </label>
           <input
             required={true}
-            className="rounded-lg invalid:border-red-500 invalid:text-red-600
-      focus:invalid:border-red-500 focus:invalid:ring-red-500 border border-gray-300 px-2 text-center"
+            className="rounded-lg py-1.5 
+      focus:invalid:border-red-500 focus:invalid:ring-red-500 border border-gray-300 px-2.5 font-medium"
             type="tel"
             name="usernumber"
-            defaultValue={"e.g. +1 234 567 890"}
+            placeholder="e.g. +1 234 567 890"
+            // defaultValue={""}
           />
         </div>
-        <button type="submit">Next</button>
+        <button
+          //HACK: Very important to understarnd the mt-auto
+          className="justify-self-end mt-auto self-end py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-lg"
+          type="submit"
+        >
+          Next Step
+        </button>
       </form>
     </div>
   );
