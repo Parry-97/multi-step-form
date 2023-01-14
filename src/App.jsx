@@ -20,7 +20,7 @@ function App() {
    * flex items stretch to the height of the flex container by default.*/
 
   return (
-    <div className="flex bg-gray-200 md:bg-white md:p-3 grow md:my-20  md:mx-auto md:shadow-2xl md:rounded-3xl flex-col md:flex-row  max-w-screen-lg">
+    <div className="flex relative bg-gray-100 md:bg-white md:p-3 grow md:my-20  md:mx-auto md:shadow-2xl md:rounded-3xl flex-col md:flex-row  max-w-screen-lg">
       <Navbar
         stepDescriptions={stepDescriptions}
         activeStep={activeStep}
