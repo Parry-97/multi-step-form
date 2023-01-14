@@ -30,7 +30,7 @@ body {
   /* display: flex; */
   place-items: center;
 
-  min-width: 375px;
+  min-width: 360px;
   min-height: 800px;
   /*WARN: This is important to allow the body to strech entire viewport instead of limiting it
   *       to wrap the internal content*/

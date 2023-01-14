@@ -1,11 +1,11 @@
 const InfoForm = () => {
   return (
-    <div className="flex flex-col mx-auto py-16">
-      <h1 className="block font-extrabold info__head text-4xl">
+    <div className=" flex flex-col h-full mx-auto px-10 py-16">
+      <h1 className="block font-extrabold info__head text-2xl md:text-4xl">
         Personal info
       </h1>{" "}
       <form className="grow flex flex-col gap-2 max-w-lg" action="">
-        <p className="info__p text-lg font-normal mb-10">
+        <p className="info__p text-base md:text-lg font-normal mb-10">
           Please provide your name, email address, and phone number.
         </p>
         <div className="flex flex-col justify-between ">
@@ -60,13 +60,6 @@ const InfoForm = () => {
             // defaultValue={""}
           />
         </div>
-        <button
-          //HACK: Very important to understarnd the mt-auto
-          className="justify-self-end mt-auto self-end py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-lg"
-          type="submit"
-        >
-          Next Step
-        </button>
       </form>
     </div>
   );
