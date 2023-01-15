@@ -9,9 +9,11 @@ const CardFactory = ({ component: Component, ...rest }) => {
         <Component {...rest} />
       </div>
       <button
-        //NOTE: Could have also had this in the parent App component
+        //NOTE: Could have also had this in the parent App component.
+        //      Furthemore, remember that absolute positioned elements
+        //      consider the padding box as the containing block not the content-box
         //HACK: Very important to understarnd the mt-auto
-        className="absolute bottom-16 right-5 md:static z-0 ml-auto md:mr-20 py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-base md:text-lg"
+        className="absolute bottom-20 right-5 md:static z-0 ml-auto md:mr-20 py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-base md:text-lg"
         type="submit"
       >
         Next Step

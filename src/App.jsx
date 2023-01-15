@@ -10,7 +10,7 @@ import InfoForm from "./components/InfoForm";
 import AddOnSelect from "./components/AddOnSelect";
 
 function App() {
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(1);
 
   const steps = [InfoForm, PlanSelect, AddOnSelect, Summary, Finish];
   const stepDescriptions = ["Your info", "select plan", "add-ons", "Summary"];

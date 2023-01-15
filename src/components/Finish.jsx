@@ -1,17 +1,21 @@
 const Finish = () => {
   return (
-    <div className="mx-auto w-4/5 pt-5 text-center max-w-sm">
-      <h1 className="font-extrabold text-5xl">Thank you!</h1>
-      <img
-        className="mx-auto mt-5"
-        src="../../assets/images/icon-thank-you.svg"
-        alt=""
-      />
-      <p className="pt-10">
-        Thanks for confirming your subscription! We hope you have fun using our
-        platform. If you ever need support, please feel free to email us at
-        support@loremgaming.com.
-      </p>{" "}
+    <div className="flex h-full justify-center py-20 mx-auto w-full max-w-xl text-center">
+      <div className="my-auto w-5/6">
+        <img
+          className="mx-auto"
+          src="../../assets/images/icon-thank-you.svg"
+          alt=""
+        />
+        <h1 className="info__head mt-10 font-extrabold text-2xl md:text-4xl">
+          Thank you!
+        </h1>
+        <p className="pt-4 info__p">
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          at support@loremgaming.com.
+        </p>{" "}
+      </div>
     </div>
   );
 };

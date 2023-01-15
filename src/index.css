@@ -8,6 +8,24 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-weight: 500;
+  src: url("../assets/fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-weight: 800;
+  src: url("../assets/fonts/Ubuntu-Bold.ttf");
+}
+
 :root {
   font-family: "Ubuntu", Arial, Helvetica, sans-serif;
   height: 100%;

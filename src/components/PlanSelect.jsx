@@ -1,17 +1,46 @@
+import MyToggle from "./MyToggle";
+import PlanOption from "./PlanOption";
+import { useState } from "react";
+
 const PlanSelect = () => {
+  const [monthly, setMonthly] = useState(false);
+
+  const planOptions = [
+    {
+      name: "Arcade",
+      cost: 9,
+      iconPath: "../../assets/images/icon-arcade.svg",
+    },
+    {
+      name: "Advanced",
+      cost: 12,
+      iconPath: "../../assets/images/icon-advanced.svg",
+    },
+    { name: "Pro", cost: 15, iconPath: "../../assets/images/icon-pro.svg" },
+  ];
+  //WARN: Careful with paddings for flex containers it tends to shrink the text down
   return (
-    <div>
-      <h2>Select your plan</h2>
-      <p>You have the option of monthly or yearly billing.</p>
-      <ul>
-        <li>Arcade $9/mo</li>
-        <li>Advanced $12/mo</li>
-        <li>Pro $15/mo</li>
-        <input type="checkbox" />
+    <div className="flex flex-col h-full w-11/12 mx-auto md:px-20 py-16">
+      <h2 className="block font-extrabold info__head text-2xl md:text-4xl">
+        Select your plan
+      </h2>
+      <p className="info__p text-base md:text-lg font-normal mb-10">
+        You have the option of monthly or yearly billing.
+      </p>
+      <ul className="flex flex-col gap-3">
+        {planOptions.map((option, i) => {
+          return (
+            <PlanOption
+              key={i}
+              monthly={monthly}
+              planName={option.name}
+              cost={option.cost}
+              iconPath={option.iconPath}
+            ></PlanOption>
+          );
+        })}
       </ul>
-      Monthly Yearly
-      <span>Go Back</span>
-      <span>Next Step</span>
+      <MyToggle enabled={monthly} setEnabled={setMonthly}></MyToggle>
     </div>
   );
 };

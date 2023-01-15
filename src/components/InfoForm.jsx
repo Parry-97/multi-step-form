@@ -1,6 +1,6 @@
 const InfoForm = () => {
   return (
-    <div className="flex flex-col h-full mx-auto px-5 md:px-20 py-16">
+    <div className="flex flex-col h-full mx-auto md:px-20 py-16">
       <h1 className="block font-extrabold info__head text-2xl md:text-4xl">
         Personal info
       </h1>{" "}
@@ -8,7 +8,7 @@ const InfoForm = () => {
         <p className="info__p text-base md:text-lg font-normal mb-10">
           Please provide your name, email address, and phone number.
         </p>
-        <div className="flex flex-col justify-between ">
+        <div className="flex flex-col justify-between">
           <label className="info__label font-medium text-sm" htmlFor="username">
             Username
           </label>{" "}
