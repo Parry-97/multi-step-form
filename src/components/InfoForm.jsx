@@ -1,6 +1,6 @@
 const InfoForm = () => {
   return (
-    <div className="flex flex-col h-full mx-auto md:px-20 py-16">
+    <div className="flex flex-col h-full mx-auto px-10 md:px-20 py-16">
       <h1 className="block font-extrabold info__head text-2xl md:text-4xl">
         Personal info
       </h1>{" "}

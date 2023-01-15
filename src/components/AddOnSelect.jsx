@@ -1,6 +1,9 @@
 import AddOnOption from "./AddOnOption";
+import MyToggle from "./MyToggle";
+import { useState } from "react";
 
 const AddOnSelect = () => {
+  const [monthly, setMonthly] = useState(false);
   const addOnOptions = [
     {
       name: "Online service",
@@ -34,10 +37,12 @@ const AddOnSelect = () => {
               optionName={option.name}
               details={option.details}
               cost={option.cost}
+              monthly={monthly}
             ></AddOnOption>
           );
         })}
       </ul>
+      <MyToggle enabled={monthly} setEnabled={setMonthly}></MyToggle>
     </div>
   );
 };
