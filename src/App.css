@@ -42,6 +42,10 @@
   color: var(--cool-gray);
 }
 
+.purplish-blue {
+  color: var(--purplish-blue);
+}
+
 .step__num {
   color: var(--pastel-blue);
 }
