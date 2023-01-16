@@ -12,7 +12,7 @@ const AddOnOption = ({ optionName, monthly, cost, details }) => {
             className={`${
               selected ? "visible" : "invisible"
             } bg-indigo-600 py-2 px-1.5 rounded my-auto`}
-            src="../../assets/images/icon-checkmark.svg"
+            src="/images/icon-checkmark.svg"
             alt="checkmark"
           />
         </span>

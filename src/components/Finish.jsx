@@ -4,8 +4,8 @@ const Finish = () => {
       <div className="my-auto w-5/6">
         <img
           className="mx-auto"
-          src="../../assets/images/icon-thank-you.svg"
-          alt=""
+          src="/images/icon-thank-you.svg"
+          alt="round checkmark icon "
         />
         <h1 className="info__head mt-10 font-extrabold text-2xl md:text-4xl">
           Thank you!
