@@ -1,6 +1,9 @@
 import MyToggle from "./MyToggle";
 import PlanOption from "./PlanOption";
 import { useState } from "react";
+import iconArcade from "../../assets/images/icon-arcade.svg";
+import iconAdvanced from "../../assets/images/icon-advanced.svg";
+import iconPro from "../../assets/images/icon-pro.svg";
 
 const PlanSelect = () => {
   const [monthly, setMonthly] = useState(false);
@@ -9,14 +12,14 @@ const PlanSelect = () => {
     {
       name: "Arcade",
       cost: 9,
-      iconPath: "../images/icon-arcade.svg",
+      iconPath: iconArcade,
     },
     {
       name: "Advanced",
       cost: 12,
-      iconPath: "../images/icon-advanced.svg",
+      iconPath: iconAdvanced,
     },
-    { name: "Pro", cost: 15, iconPath: "../images/icon-pro.svg" },
+    { name: "Pro", cost: 15, iconPath: iconPro },
   ];
   //WARN: Careful with paddings for flex containers it tends to shrink the text down
   return (

@@ -1,5 +1,6 @@
 import Option from "./Option";
 import { useState } from "react";
+import checkmark from "../../assets/images/icon-checkmark.svg";
 
 const AddOnOption = ({ optionName, monthly, cost, details }) => {
   const [selected, setselected] = useState(false);
@@ -12,7 +13,7 @@ const AddOnOption = ({ optionName, monthly, cost, details }) => {
             className={`${
               selected ? "visible" : "invisible"
             } bg-indigo-600 py-2 px-1.5 rounded my-auto`}
-            src="../images/icon-checkmark.svg"
+            src={checkmark}
             alt="checkmark"
           />
         </span>

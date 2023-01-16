@@ -1,3 +1,6 @@
+// import sidebarMobile from "/images/bg-sidebar-mobile.svg";
+// import sidebarDesktop from "/images/bg-sidebar-desktop.svg";
+
 const Navbar = ({
   stepDescriptions: descriptions,
   activeStep,
@@ -7,7 +10,11 @@ const Navbar = ({
   console.log(descriptions);
 
   return (
-    <div className="md:basis-1/3 z-0 navbar__img md:rounded-xl  bg-clip-border bg-cover bg-[url('../images/bg-sidebar-mobile.svg')] md:bg-[url('../images/bg-sidebar-desktop.svg')]">
+    <div
+      className={
+        "md:basis-1/3 z-0 navbar__img md:rounded-xl  bg-clip-border bg-cover bg-[url('/images/bg-sidebar-mobile.svg')] md:bg-[url('/images/bg-sidebar-desktop.svg')]"
+      }
+    >
       <ul className="flex flex-row pb-28 pt-4 md:px-10 md:py-20 md:flex-col md:items-start justify-center items-center uppercase text-base text-slate-50 font-extrabold">
         {descriptions.map((description, i) => {
           return activeStep == i ? (
