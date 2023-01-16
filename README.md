@@ -1,4 +1,4 @@
-:warning: this is still a work-in-progress README.md
+:warning: this is still a work-in-progress README.md and so is the current solution
 
 # Frontend Mentor - Multi-step form solution
 
