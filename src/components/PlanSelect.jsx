@@ -9,14 +9,14 @@ const PlanSelect = () => {
     {
       name: "Arcade",
       cost: 9,
-      iconPath: "/images/icon-arcade.svg",
+      iconPath: "../images/icon-arcade.svg",
     },
     {
       name: "Advanced",
       cost: 12,
-      iconPath: "/images/icon-advanced.svg",
+      iconPath: "../images/icon-advanced.svg",
     },
-    { name: "Pro", cost: 15, iconPath: "/images/icon-pro.svg" },
+    { name: "Pro", cost: 15, iconPath: "../images/icon-pro.svg" },
   ];
   //WARN: Careful with paddings for flex containers it tends to shrink the text down
   return (
