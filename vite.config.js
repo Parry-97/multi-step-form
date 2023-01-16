@@ -4,6 +4,6 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ["./images/**"],
+  assetsInclude: ["/multi-step-form/images/**"],
   base: "/multi-step-form/",
 });
