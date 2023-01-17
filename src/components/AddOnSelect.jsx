@@ -2,7 +2,7 @@ import AddOnOption from "./AddOnOption";
 import MyToggle from "./MyToggle";
 import { useState } from "react";
 
-const AddOnSelect = () => {
+const AddOnSelect = (props) => {
   const [monthly, setMonthly] = useState(false);
   const addOnOptions = [
     {
@@ -21,6 +21,9 @@ const AddOnSelect = () => {
       details: "Custom theme on your profile",
     },
   ];
+  const handleSubmit = async function (evt) {
+    props.onGoNext();
+  };
   return (
     <div className="flex flex-col h-full w-11/12 mx-auto lg:px-16 py-16">
       <h2 className="block font-extrabold info__head text-2xl md:text-4xl">
@@ -43,6 +46,13 @@ const AddOnSelect = () => {
         })}
       </ul>
       <MyToggle enabled={monthly} setEnabled={setMonthly}></MyToggle>
+      <button
+        className="absolute -bottom-40 right-5 md:right-10 md:bottom-5 z-10 ml-auto md:mr-20 py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-base"
+        type="submit"
+        onClick={handleSubmit}
+      >
+        Next Step
+      </button>
     </div>
   );
 };

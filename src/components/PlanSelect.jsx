@@ -5,7 +5,7 @@ import iconArcade from "../../assets/images/icon-arcade.svg";
 import iconAdvanced from "../../assets/images/icon-advanced.svg";
 import iconPro from "../../assets/images/icon-pro.svg";
 
-const PlanSelect = () => {
+const PlanSelect = (props) => {
   const [monthly, setMonthly] = useState(false);
 
   const planOptions = [
@@ -21,6 +21,11 @@ const PlanSelect = () => {
     },
     { name: "Pro", cost: 15, iconPath: iconPro },
   ];
+
+  const handleSubmit = async function (evt) {
+    props.onGoNext();
+  };
+
   //WARN: Careful with paddings for flex containers it tends to shrink the text down
   return (
     <div className="flex flex-col h-full w-11/12 mx-auto md:px-20 py-16">
@@ -44,6 +49,14 @@ const PlanSelect = () => {
         })}
       </ul>
       <MyToggle enabled={monthly} setEnabled={setMonthly}></MyToggle>
+      <button
+        className="absolute -bottom-44 right-5 md:right-10 md:bottom-5 z-10 ml-auto md:mr-20 py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-base"
+        type="submit"
+        onClick={handleSubmit}
+        // onSubmit={handleSubmit}
+      >
+        Next Step
+      </button>
     </div>
   );
 };

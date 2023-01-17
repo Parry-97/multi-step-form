@@ -1,6 +1,9 @@
-const Summary = () => {
+const Summary = (props) => {
+  const handleSubmit = async function (evt) {
+    props.onGoNext();
+  };
   return (
-    <div className="h-full w-11/12 mx-auto md:px-20 py-16">
+    <div className="h-full w-11/12 mx-auto lg:px-16 py-16">
       <h1 className="info__head mt-10 font-extrabold text-2xl md:text-4xl">
         Finishing up
       </h1>
@@ -26,6 +29,13 @@ const Summary = () => {
         <p className="info__p ">Total(per month)</p>
         <span className="text-indigo-600 font-extrabold text-lg">+$12/mo</span>
       </div>
+      <button
+        className="absolute -bottom-72 right-5 md:right-10 md:bottom-5 z-10 ml-auto md:mr-20 py-2 rounded-md px-4 border bg-indigo-600 text-white font-medium text-base"
+        type="submit"
+        onClick={handleSubmit}
+      >
+        Confirm
+      </button>
     </div>
   );
 };

@@ -32,7 +32,9 @@ function App() {
         onGoBack={() =>
           setActiveStep(activeStep > 0 ? activeStep - 1 : activeStep)
         }
-        onGoNext={() => setActiveStep(activeStep + 1)}
+        onGoNext={() =>
+          setActiveStep(activeStep == 4 ? activeStep : activeStep + 1)
+        }
       ></CardFactory>
     </div>
   );

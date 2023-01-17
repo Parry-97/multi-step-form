@@ -1,6 +1,15 @@
 import { createContext, useContext } from "react";
 import { useImmerReducer } from "use-immer";
 
+const initialCostState = {
+  plan: {},
+  addons: [],
+  username: "",
+  monthly: true,
+  email: "",
+  number: "",
+};
+
 const CostContext = createContext(null);
 const CostDispatchContext = createContext(null);
 
@@ -12,8 +21,8 @@ export function useCostDispatch() {
   return useContext(CostDispatchContext);
 }
 
-const CostProvider = ({ children }) => {
-  const [cost, dispatch] = useImmerReducer(costReducer, {}, null);
+export const CostProvider = ({ children }) => {
+  const [cost, dispatch] = useImmerReducer(costReducer, initialCostState);
 
   return (
     <CostContext.Provider value={cost}>
@@ -38,7 +47,7 @@ function costReducer(cost, action) {
       cost.monthly = false;
       break;
 
-    case "addon":
+    case "addons":
       cost.addons = action.addons;
       break;
 
