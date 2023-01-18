@@ -18,8 +18,6 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -39,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://github.com/Parry-97/multi-step-form)
+- Live Site URL: (https://parry-97.github.io/multi-step-form/)
 
 ## My process
 
@@ -49,13 +47,11 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Vite](https://vitejs.dev/)
+- [React](https://beta.reactjs.org/) - Frontend Library/Framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
