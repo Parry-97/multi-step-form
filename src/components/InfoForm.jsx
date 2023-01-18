@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useCost, useCostDispatch } from "./CostContext";
+import { useActiveStep, useSetStep } from "./FormContext";
 
 const InfoForm = (props) => {
   const overallCost = useCost();
@@ -8,6 +9,8 @@ const InfoForm = (props) => {
   const [email, setEmail] = useState(overallCost.email);
   const [number, setNumber] = useState(overallCost.number);
 
+  const setStep = useSetStep();
+  const activeStep = useActiveStep();
   const dispatch = useCostDispatch();
 
   const handleSubmit = async function (evt) {
@@ -17,7 +20,7 @@ const InfoForm = (props) => {
     dispatch({ type: "email", email: email });
     dispatch({ type: "number", number: number });
 
-    props.onGoNext();
+    setStep(activeStep + 1);
   };
 
   return (

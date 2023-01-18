@@ -5,6 +5,7 @@ import iconArcade from "../../assets/images/icon-arcade.svg";
 import iconAdvanced from "../../assets/images/icon-advanced.svg";
 import iconPro from "../../assets/images/icon-pro.svg";
 import { useCost, useCostDispatch } from "./CostContext";
+import { useActiveStep, useSetStep } from "./FormContext";
 // import MyDialog from "./MyDialog";
 
 const PlanSelect = (props) => {
@@ -13,6 +14,8 @@ const PlanSelect = (props) => {
   const [monthly, setMonthly] = useState(overallCost.monthly);
   // const [isError, setIsError] = useState(false);
   const [selectedPlan, setselectedPlan] = useState(overallCost?.plan?.name);
+  const setStep = useSetStep();
+  const activeStep = useActiveStep();
 
   const planOptions = [
     {
@@ -36,7 +39,7 @@ const PlanSelect = (props) => {
       var plan = planOptions.find((plan) => plan.name == selectedPlan);
       dispatch({ type: "plan", plan: { name: plan.name, cost: plan.cost } });
 
-      props.onGoNext();
+      setStep(activeStep + 1);
       return;
     }
     console.log("Please select a valid plan");
@@ -61,7 +64,7 @@ const PlanSelect = (props) => {
           return (
             <PlanOption
               key={i}
-              monthly={!monthly}
+              monthly={monthly}
               planName={option.name}
               cost={option.cost}
               iconPath={option.iconPath}

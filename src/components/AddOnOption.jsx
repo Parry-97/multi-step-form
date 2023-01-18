@@ -1,12 +1,19 @@
 import Option from "./Option";
-import { useState } from "react";
+// import { useState } from "react";
 import checkmark from "../../assets/images/icon-checkmark.svg";
 
-const AddOnOption = ({ optionName, monthly, cost, details }) => {
-  const [selected, setselected] = useState(false);
+const AddOnOption = ({
+  selected,
+  setSelected,
+  optionName,
+  monthly,
+  cost,
+  details,
+}) => {
+  // const [selected, setselected] = useState(false);
 
   return (
-    <Option selected={selected} onSelect={() => setselected(!selected)}>
+    <Option selected={selected} onSelect={setSelected}>
       <div className="flex align-middle w-full">
         <span className="border self-start my-auto mx-4  rounded-md ">
           <img

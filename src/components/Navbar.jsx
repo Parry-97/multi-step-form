@@ -1,13 +1,13 @@
 // import sidebarMobile from "/images/bg-sidebar-mobile.svg";
 // import sidebarDesktop from "/images/bg-sidebar-desktop.svg";
 
+import { useActiveStep } from "./FormContext";
+
 const Navbar = ({
   stepDescriptions: descriptions,
-  activeStep,
-  onSelectStep,
+  // activeStep,
 }) => {
-  //TODO: Add conditional logic display of active step based on prop of shared state
-  console.log(descriptions);
+  const activeStep = useActiveStep();
 
   return (
     <div
@@ -19,7 +19,7 @@ const Navbar = ({
         {descriptions.map((description, i) => {
           return activeStep == i ? (
             <li
-              onClick={() => onSelectStep(i)}
+              // onClick={() => onSelectStep(i)}
               key={i}
               className="mt-5 flex flex-row items-center"
             >
@@ -37,7 +37,7 @@ const Navbar = ({
             </li>
           ) : (
             <li
-              onClick={() => onSelectStep(i)}
+              // onClick={() => onSelectStep(i)}
               key={i}
               className="mt-5 flex flex-row items-center"
             >

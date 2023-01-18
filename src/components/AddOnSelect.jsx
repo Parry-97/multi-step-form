@@ -1,11 +1,17 @@
 import AddOnOption from "./AddOnOption";
 import MyToggle from "./MyToggle";
 import { useState } from "react";
-import { useCostDispatch } from "./CostContext";
+import { useCost, useCostDispatch } from "./CostContext";
+import { useActiveStep, useSetStep } from "./FormContext";
 
 const AddOnSelect = (props) => {
-  const [monthly, setMonthly] = useState(false);
+  const overallCost = useCost();
   const dispatch = useCostDispatch();
+  const [monthly, setMonthly] = useState(overallCost.monthly);
+  const setStep = useSetStep();
+  const activeStep = useActiveStep();
+
+  const [selectedAddons, setSelectedAddons] = useState(overallCost.addons);
 
   const addOnOptions = [
     {
@@ -24,9 +30,35 @@ const AddOnSelect = (props) => {
       details: "Custom theme on your profile",
     },
   ];
-  const handleSubmit = async function (evt) {
-    props.onGoNext();
+
+  const handleSubmit = async function () {
+    if (selectedAddons.length > 0) {
+      dispatch({ type: "monthly", monthly: monthly });
+      dispatch({ type: "addons", addons: selectedAddons });
+      setStep(activeStep + 1);
+    }
   };
+
+  const handleSelect = (option) => {
+    console.log(selectedAddons);
+    const found = selectedAddons.find(
+      (selected) => option.name == selected.name
+    );
+    if (found) {
+      setSelectedAddons(
+        selectedAddons.filter((addon) => addon.name != found.name)
+      );
+      return;
+    }
+
+    setSelectedAddons([option, ...selectedAddons]);
+  };
+
+  const checkSelected = (option) => {
+    // console.log(selectedAddons);
+    return selectedAddons.find((addon) => addon.name == option.name) != null;
+  };
+
   return (
     <div className="flex flex-col h-full w-11/12 mx-auto lg:px-16 py-16">
       <h2 className="block font-extrabold info__head text-2xl md:text-4xl">
@@ -44,6 +76,8 @@ const AddOnSelect = (props) => {
               details={option.details}
               cost={option.cost}
               monthly={monthly}
+              selected={checkSelected(option)}
+              setSelected={() => handleSelect(option)}
             ></AddOnOption>
           );
         })}
