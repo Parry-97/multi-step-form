@@ -1,13 +1,22 @@
 import { useState } from "react";
+import { useCost, useCostDispatch } from "./CostContext";
 
 const InfoForm = (props) => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
+  const overallCost = useCost();
+
+  const [username, setUsername] = useState(overallCost.username);
+  const [email, setEmail] = useState(overallCost.email);
+  const [number, setNumber] = useState(overallCost.number);
+
+  const dispatch = useCostDispatch();
 
   const handleSubmit = async function (evt) {
     evt.preventDefault();
     console.log("Submitting Form ", evt.target);
+    dispatch({ type: "username", username: username });
+    dispatch({ type: "email", email: email });
+    dispatch({ type: "number", number: number });
+
     props.onGoNext();
   };
 

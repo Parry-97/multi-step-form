@@ -1,9 +1,12 @@
 import AddOnOption from "./AddOnOption";
 import MyToggle from "./MyToggle";
 import { useState } from "react";
+import { useCostDispatch } from "./CostContext";
 
 const AddOnSelect = (props) => {
   const [monthly, setMonthly] = useState(false);
+  const dispatch = useCostDispatch();
+
   const addOnOptions = [
     {
       name: "Online service",

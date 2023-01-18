@@ -4,9 +4,15 @@ import { useState } from "react";
 import iconArcade from "../../assets/images/icon-arcade.svg";
 import iconAdvanced from "../../assets/images/icon-advanced.svg";
 import iconPro from "../../assets/images/icon-pro.svg";
+import { useCost, useCostDispatch } from "./CostContext";
+// import MyDialog from "./MyDialog";
 
 const PlanSelect = (props) => {
-  const [monthly, setMonthly] = useState(false);
+  const overallCost = useCost();
+  const dispatch = useCostDispatch();
+  const [monthly, setMonthly] = useState(overallCost.monthly);
+  // const [isError, setIsError] = useState(false);
+  const [selectedPlan, setselectedPlan] = useState(overallCost?.plan?.name);
 
   const planOptions = [
     {
@@ -22,11 +28,26 @@ const PlanSelect = (props) => {
     { name: "Pro", cost: 15, iconPath: iconPro },
   ];
 
-  const handleSubmit = async function (evt) {
-    props.onGoNext();
+  const handleSubmit = async function () {
+    console.log(selectedPlan);
+    if (selectedPlan) {
+      dispatch({ type: "monthly", monthly: monthly });
+
+      var plan = planOptions.find((plan) => plan.name == selectedPlan);
+      dispatch({ type: "plan", plan: { name: plan.name, cost: plan.cost } });
+
+      props.onGoNext();
+      return;
+    }
+    console.log("Please select a valid plan");
+
+    // setIsError(true);
   };
 
-  //WARN: Careful with paddings for flex containers it tends to shrink the text down
+  // if (isError) {
+  //   return <MyDialog isOpen={isError} setIsOpen={setIsError}></MyDialog>;
+  // } else {
+  //WARN: Careful with paddings for flex containers it tends to shrink/smush the text down
   return (
     <div className="flex flex-col h-full w-11/12 mx-auto md:px-20 py-16">
       <h2 className="block font-extrabold info__head text-2xl md:text-4xl">
@@ -40,15 +61,22 @@ const PlanSelect = (props) => {
           return (
             <PlanOption
               key={i}
-              monthly={monthly}
+              monthly={!monthly}
               planName={option.name}
               cost={option.cost}
               iconPath={option.iconPath}
+              selected={option.name == selectedPlan}
+              onSelect={() => setselectedPlan(option.name)}
             ></PlanOption>
           );
         })}
       </ul>
-      <MyToggle enabled={monthly} setEnabled={setMonthly}></MyToggle>
+      <MyToggle
+        enabled={monthly}
+        setEnabled={() => {
+          setMonthly(!monthly);
+        }}
+      ></MyToggle>
       <button
         className="absolute -bottom-44 right-5 md:right-10 md:bottom-5 z-10 ml-auto md:mr-20 py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-base"
         type="submit"
@@ -60,5 +88,6 @@ const PlanSelect = (props) => {
     </div>
   );
 };
+// };
 
 export default PlanSelect;

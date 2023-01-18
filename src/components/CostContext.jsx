@@ -5,7 +5,7 @@ const initialCostState = {
   plan: {},
   addons: [],
   username: "",
-  monthly: true,
+  monthly: false,
   email: "",
   number: "",
 };
@@ -39,16 +39,24 @@ function costReducer(cost, action) {
       cost.plan = action.plan;
       break;
 
-    case "montly":
-      cost.monthly = true;
-      break;
-
-    case "yearly":
-      cost.monthly = false;
+    case "monthly":
+      cost.monthly = action.monthly;
       break;
 
     case "addons":
       cost.addons = action.addons;
+      break;
+
+    case "username":
+      cost.username = action.username;
+      break;
+
+    case "email":
+      cost.email = action.email;
+      break;
+
+    case "number":
+      cost.number = action.number;
       break;
 
     default:

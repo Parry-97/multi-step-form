@@ -1,4 +1,8 @@
+import { useCost } from "./CostContext";
+
 const Summary = (props) => {
+  const finalCost = useCost();
+
   const handleSubmit = async function (evt) {
     props.onGoNext();
   };
