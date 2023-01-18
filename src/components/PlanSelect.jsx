@@ -8,7 +8,7 @@ import { useCost, useCostDispatch } from "./CostContext";
 import { useActiveStep, useSetStep } from "./FormContext";
 // import MyDialog from "./MyDialog";
 
-const PlanSelect = (props) => {
+const PlanSelect = () => {
   const overallCost = useCost();
   const dispatch = useCostDispatch();
   const [monthly, setMonthly] = useState(overallCost.monthly);
@@ -84,10 +84,15 @@ const PlanSelect = (props) => {
         className="absolute -bottom-44 right-5 md:right-10 md:bottom-5 z-10 ml-auto md:mr-20 py-2 rounded-md px-4 border bg-blue-900 text-white font-medium text-base"
         type="submit"
         onClick={handleSubmit}
-        // onSubmit={handleSubmit}
       >
         Next Step
       </button>
+      <span
+        onClick={() => setStep(activeStep - 1)}
+        className="font-bold text-lg absolute -bottom-44 left-5 md:left-80 py-2 hover:cursor-pointer text-gray-400 md:bottom-5 z-10"
+      >
+        Go Back
+      </span>
     </div>
   );
 };

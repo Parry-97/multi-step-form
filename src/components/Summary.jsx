@@ -32,7 +32,7 @@ const Summary = () => {
             </h2>
             <span
               onClick={() => setStep(activeStep - 2)}
-              className="underline info_p hover:cursor-pointer"
+              className="underline text-gray-500 hover:cursor-pointer"
             >
               Change
             </span>
@@ -75,6 +75,12 @@ const Summary = () => {
       >
         Confirm
       </button>
+      <span
+        onClick={() => setStep(activeStep - 1)}
+        className="font-bold text-lg absolute -bottom-72 left-5 md:left-80 py-2 hover:cursor-pointer text-gray-400 md:bottom-5 z-10"
+      >
+        Go Back
+      </span>
     </div>
   );
 };

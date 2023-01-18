@@ -90,6 +90,12 @@ const AddOnSelect = (props) => {
       >
         Next Step
       </button>
+      <span
+        onClick={() => setStep(activeStep - 1)}
+        className="font-bold text-lg absolute -bottom-40 left-5 md:left-80 py-2 hover:cursor-pointer text-gray-400 md:bottom-5 z-10"
+      >
+        Go Back
+      </span>
     </div>
   );
 };
